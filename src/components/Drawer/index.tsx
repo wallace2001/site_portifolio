@@ -13,8 +13,8 @@ export const Drawer = ({open, handleCancel}: Props) => {
     const ref = useRef();
 
     const propsContainer = useSpring({
-        opacity: open ? 1 : 0,
-        x: open ? 0 : -500,
+        // width: !open && 0,
+        x: open ? 0 : -1000,
         delay: 100,
     });
 

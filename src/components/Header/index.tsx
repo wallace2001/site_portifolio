@@ -30,12 +30,6 @@ export const Header = ({scroll}: Props) => {
         delay: 100
     });
 
-    const handleScrollTo = (before: number, after: number) => {
-        document.documentElement.scrollTo(before, after);
-    }
-
-    console.log(scroll);
-
     const handleCancel = () => {
         setOpenMenuMobile(prevState => !prevState);
     };
