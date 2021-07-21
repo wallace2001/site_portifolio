@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    height: auto;
+    
+    h2{
+        font-size: 2.4rem;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .line{
+        width: 25rem;
+        height: 2px;
+        position: relative;
+        top: 0;
+        left: 25rem;
+
+        background-color: var(--blue);
+
+        @media screen and (max-width: 1000px){
+            left: 6rem;
+        };
+        @media screen and (max-width: 600px){
+            display: none;
+        };
+    }
+}

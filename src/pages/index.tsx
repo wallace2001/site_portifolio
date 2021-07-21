@@ -8,6 +8,7 @@ import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Portfolio } from '../components/Portfolio';
 
 export default function Home() {
   const [showAboutSession, setShowAboutSession] = useState<boolean>(false);
@@ -83,6 +84,9 @@ export default function Home() {
       </div>
       <div id="about" className={styles.about}>
         <About open={showAboutSession} />
+      </div>
+      <div className={styles.portfolio} id="portfolio">
+        <Portfolio scroll={scroll} />
       </div>
     </div>
   )

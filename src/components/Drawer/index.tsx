@@ -38,12 +38,12 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     duration={500}
                     spy={true}
                     exact='true'
-                    offset={-80}
+                    offset={300}
                     className={styles.li} 
                     onClick={handleCancel}
                     >Sobre</LinkS>
                 <LinkS
-                    to="#"
+                    to="portfolio"
                     className={styles.li}
                     smooth={true}
                     duration={500}
