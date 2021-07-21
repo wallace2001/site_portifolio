@@ -4,6 +4,7 @@ import { useSpring, animated } from 'react-spring';
 import {HiOutlineMenuAlt1} from 'react-icons/hi';
 import { Drawer } from '../Drawer';
 import { useState } from 'react';
+import { Link as LinkS } from 'react-scroll';
 
 interface Props{
     scroll: number;
@@ -45,10 +46,44 @@ export const Header = ({scroll}: Props) => {
                 <HiOutlineMenuAlt1 style={{marginTop: '1rem'}} size={50} color="#fff" onClick={handleCancel} />
             </animated.div>
             <animated.ul style={{...propsWeb}}>
-                <li className={scroll >= 0 && scroll < 400 ? styles.actived : ""} onClick={() => handleScrollTo(0, 0)}>Início</li>
-                <li className={scroll >= 400 && scroll < 1500 ? styles.actived : ""} onClick={() => handleScrollTo(400, 1500)}>Sobre</li>
-                <li>Portifólio</li>
-                <li>Contato</li>
+                <LinkS 
+                    className={scroll >= 0 && scroll < 400 ? styles.actived : styles.li}
+                    to="home"
+                    smooth={true}
+                    duration={500} 
+                    spy={true} 
+                    exact='true' 
+                    offset={-80} 
+                    // onClick={() => handleScrollTo(0, 0)}
+                >Início</LinkS>
+                <LinkS
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80}
+                    className={scroll >= 400 && scroll < 1000 ? styles.actived : styles.li} 
+                    // onClick={() => handleScrollTo(400, 1500)}
+                    >Sobre</LinkS>
+                <LinkS
+                    to="#"
+                    className={scroll >= 1000 && scroll < 2000 ? styles.actived : styles.li}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80}
+                    >Portifólio</LinkS>
+                <LinkS
+                    to="#"
+                    className={scroll >= 2000 && scroll < 2500 ? styles.actived : styles.li}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80}
+                    >Contato</LinkS>
             </animated.ul>
             <Drawer open={openMenuMobile} handleCancel={handleCancel} />
         </animated.div>

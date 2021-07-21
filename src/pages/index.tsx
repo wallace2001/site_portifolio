@@ -67,7 +67,7 @@ export default function Home() {
       <div className={styles.video}>
         <animated.video style={{...propsVideo}} autoPlay loop muted src="bg.mp4"></animated.video>
       </div>
-      <div className={styles.apresentation}>
+      <div id="home" className={styles.apresentation}>
         <animated.h2 style={{...propsTitle}}>Bem vindo</animated.h2>
         <animated.h5 style={{...propsDesc}}>Olá, meu nome é Wallace De Paula Silva e muito bem vindo ao meu site portifólio.</animated.h5>
         <animated.div style={{...propsRest}} className={styles.stacks}>
@@ -81,7 +81,7 @@ export default function Home() {
         </animated.div>
         <animated.button style={{...propsRest}}>Portifólio</animated.button>
       </div>
-      <div className={styles.about}>
+      <div id="about" className={styles.about}>
         <About open={showAboutSession} />
       </div>
     </div>
