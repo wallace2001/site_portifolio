@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { portfolio } from '../../config/portfolio';
+import { WebContext } from '../../context/contact';
 import { Products } from '../Products';
 import styles from './styles.module.scss';
 
-interface Props{
-    open: boolean;
-}
+export const Portfolio = () => {
 
-export const Portfolio = ({open}: Props) => {
+    const {scrollActive} = useContext(WebContext);
 
     const propsHeader = useSpring({
-        opacity: open ? 1 : 0,
-        x: open ? 0 : -500,
+        opacity: scrollActive.portfolio ? 1 : 0,
+        x: scrollActive.portfolio ? 0 : -500,
         delay: 100
     });
     const propsRest = useSpring({
-        opacity: open ? 1 : 0,
-        x: open ? 0 : -500,
+        opacity: scrollActive.portfolio ? 1 : 0,
+        x: scrollActive.portfolio ? 0 : -500,
         delay: 200
     });
 
@@ -26,20 +26,14 @@ export const Portfolio = ({open}: Props) => {
             <animated.div className={styles.line} style={{...propsHeader}} />
 
             <animated.div style={{...propsRest}} className={styles.product}>
-                <Products 
-                    title="Ecommerce"
-                    name="Sonho Veg"
-                    reverse={false}
-                    description="Este é um site de vendas de doces, onde há pagamentos, contas, painel de controle pra administrar praticamente tudo que acontece no site, status das comidas e agendamento para entrega e muito mais."
-
-                />
-                <Products 
-                    title="Ecommerce"
-                    name="Sonho Veg"
-                    reverse={true}
-                    description="Este é um site de vendas de doces, onde há pagamentos, contas, painel de controle pra administrar praticamente tudo que acontece no site, status das comidas e agendamento para entrega e muito mais."
-
-                />
+                {portfolio.map((item, index) => {
+                    return(
+                        <Products
+                            key={index}
+                            item={item}
+                        />
+                    );
+                })}
             </animated.div>
         </div>
     )

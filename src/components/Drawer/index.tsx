@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import {IoClose} from 'react-icons/io5';
 import styles from './styles.module.scss';
 import { Link as LinkS } from 'react-scroll';
+import { WebContext } from '../../context/contact';
 
 interface Props{
     open?: boolean;
@@ -11,9 +12,10 @@ interface Props{
 
 export const Drawer = ({open, handleCancel}: Props) => {
     const ref = useRef();
-
+    const {handleChangeScroll} = useContext(WebContext);
     const propsContainer = useSpring({
         // width: !open && 0,
+        display: open ? 'flex' : 'none',
         x: open ? 0 : -1000,
         delay: 100,
     });
@@ -30,15 +32,17 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     spy={true} 
                     offset={-80} 
                     onClick={handleCancel}
+                    onSetActive={() => handleChangeScroll("home")}
                 >Início</LinkS>
                 <LinkS
                     to="about"
                     smooth={true}
                     duration={500}
                     spy={true}
-                    offset={300}
+                    offset={-80}
                     className={styles.li} 
                     onClick={handleCancel}
+                    onSetActive={() => handleChangeScroll("about")}
                     >Sobre</LinkS>
                 <LinkS
                     to="portfolio"
@@ -48,6 +52,7 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     spy={true}
                     offset={-80}
                     onClick={handleCancel}
+                    onSetActive={() => handleChangeScroll("portfolio")}
                     >Portifólio</LinkS>
                 <LinkS
                     to="contact"
@@ -57,6 +62,7 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     spy={true}
                     offset={-80}
                     onClick={handleCancel}
+                    onSetActive={() => handleChangeScroll("contact")}
                     >Contato</LinkS>
             </ul>
         </animated.div>

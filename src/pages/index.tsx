@@ -13,11 +13,9 @@ import { Portfolio } from '../components/Portfolio';
 import { Contact } from '../components/Contact';
 import { ButtonFloat } from '../components/ButtonFloat';
 import { Link } from 'react-scroll';
+import { ModalStatus } from '../components/ModalStatus';
 
 export default function Home() {
-  const [showAboutSession, setShowAboutSession] = useState<boolean>(false);
-  const [showPortfolioSession, setShowPortfolioSession] = useState<boolean>(false);
-  const [showContactSession, setShowContactSession] = useState<boolean>(false);
   const [scroll, setScroll] = useState<number>(0);
 
   const propsVideo = useSpring({
@@ -39,6 +37,7 @@ export default function Home() {
     },
     delay: 100,
   });
+
   const propsDesc = useSpring({
     from: {
       x: -1000,
@@ -48,6 +47,7 @@ export default function Home() {
     },
     delay: 300,
   });
+  
   const propsRest = useSpring({
     from: {
       x: -1000,
@@ -59,32 +59,19 @@ export default function Home() {
   });
 
   useEffect(() => {
-    window.onscroll = () => {
-      setScroll(document.documentElement.scrollTop);
-      if(document.documentElement.scrollTop >= 400){
-        setShowAboutSession(true);
-      }
-
-      if(document.documentElement.scrollTop >= 1500){
-        setShowPortfolioSession(true);
-      }
-
-      if(document.documentElement.scrollTop >= 2600){
-        setShowContactSession(true);
-      }
-    }; 
+    window.onscroll = () => setScroll(document.documentElement.scrollTop);
   }, []);
 
 
   return (
     <div className={styles.container}>
-      <Header scroll={scroll} />
+      <Header />
       <div className={styles.video}>
         <animated.video style={{...propsVideo}} autoPlay loop muted src="bg.mp4"></animated.video>
       </div>
       <div id="home" className={styles.apresentation}>
         <animated.h2 style={{...propsTitle}}>Bem vindo</animated.h2>
-        <animated.h5 style={{...propsDesc}}>Olá, meu nome é Wallace De Paula Silva e muito bem vindo ao meu site portifólio.</animated.h5>
+        <animated.h5 style={{...propsDesc}}>Olá, meu nome é Wallace De Paula Silva e bem vindo ao meu site portfólio.</animated.h5>
         <animated.div style={{...propsRest}} className={styles.stacks}>
           <IoLogoNodejs size={30} color="#fff" />
           <IoLogoJavascript size={30} color="#fff" />
@@ -102,18 +89,18 @@ export default function Home() {
             spy={true}
             offset={-80}  
           >
-            Portifólio
+            Portfólio
           </Link>
         </animated.button>
       </div>
       <div id="about" className={styles.about}>
-        <About open={showAboutSession} />
+        <About />
       </div>
       <div className={styles.portfolio} id="portfolio">
-        <Portfolio open={showPortfolioSession} />
+        <Portfolio />
       </div>
       <div className={styles.contact} id="contact">
-        <Contact open={showContactSession} />
+        <Contact />
       </div>
       <ButtonFloat scroll={scroll} />
       <div className={styles.footer}>
@@ -126,6 +113,7 @@ export default function Home() {
           <AiOutlineWhatsApp size={30} color="#000" />
         </div>
       </div>
+      <ModalStatus />
     </div>
   )
 }

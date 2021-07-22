@@ -9,6 +9,16 @@
         text-align: center;
     }
 
+    .product{
+        width: 100%;
+        height: auto;
+        padding: 0 5rem;
+
+        @media screen and (max-width: 700px){
+            padding: 0;
+        }
+    }
+
     .line{
         width: 25rem;
         height: 2px;

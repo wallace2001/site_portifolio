@@ -12,27 +12,54 @@ interface PropsData{
     };
 }
 
+interface PropsScroll{
+    about: boolean;
+    contact: boolean;
+    portfolio: boolean; 
+}
+
 interface PropsContext{
     status: {
         response: boolean;
         success: boolean;
         error: any;
     },
+    loading: boolean;
+    scrollActive: {
+        about: boolean;
+        contact: boolean;
+        portfolio: boolean;    
+    };
     handleSendEmail: ({data}: PropsData ) => void;
+    handleChangeStatus: (status: boolean) => void;
+    handleChangeScroll: (active: string) => void;
 }
 
 export const WebContext = createContext({} as PropsContext);
 
 export const WebProvider = ({children}) => {
     const [loading, setLoading] = useState<boolean>(false);
+    const [firstAccess, setFirstAccess] = useState<boolean>(true);
+    const [scrollActive, setScrollActive] = useState<PropsScroll>({
+        about: false,
+        contact: false,
+        portfolio: false
+    });
     const [status, setStatus] = useState({
         response: false,
         success: false,
         error: {}
     });
 
+    setTimeout(() => {
+        setFirstAccess(false);
+    }, 5 * 1000);
+
+    const handleChangeStatus = (status: boolean) => {
+        setLoading(status);
+    };
+
     const handleSendEmail = ({data}: PropsData) => {
-        console.log(data);
         setLoading(true);
         axios.post("/api/email", data).then(res => {
             setLoading(false);
@@ -42,20 +69,32 @@ export const WebProvider = ({children}) => {
                     error: {},
                     response: true,
                 });
-                window.location.replace("/success?success=true");
-                localStorage.setItem("send_email", "true");
+                sessionStorage.setItem("send_email", "true");
+                setLoading(false);
             } else {
                 setStatus({
                     success: false,
                     error: res.data.error,
                     response: true,
                 });
-                window.location.replace("/success?success=false");
+                setLoading(false);
             }
         });
     };
 
-    if(loading){
+    const handleChangeScroll = (active: string) => {
+        if(active === "about"){
+            setScrollActive({...scrollActive, about: true});
+        }
+        if(active === "portfolio"){
+            setScrollActive({...scrollActive, portfolio: true});
+        }
+        if(active === "contact"){
+            setScrollActive({...scrollActive, contact: true});
+        }
+    };
+
+    if(loading || firstAccess){
         return(
             <Loading />
         );
@@ -63,7 +102,11 @@ export const WebProvider = ({children}) => {
     return(
         <WebContext.Provider value={{
             status,
+            loading,
+            scrollActive,
+            handleChangeScroll,
             handleSendEmail,
+            handleChangeStatus
         }}>
             {children}
         </WebContext.Provider>

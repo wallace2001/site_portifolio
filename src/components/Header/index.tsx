@@ -5,13 +5,12 @@ import {HiOutlineMenuAlt1} from 'react-icons/hi';
 import { Drawer } from '../Drawer';
 import { useState } from 'react';
 import { Link as LinkS } from 'react-scroll';
+import { useContext } from 'react';
+import { WebContext } from '../../context/contact';
 
-interface Props{
-    scroll: number;
-}
-
-export const Header = ({scroll}: Props) => {
+export const Header = () => {
     const [openMenuMobile, setOpenMenuMobile] = useState<boolean>(false);
+    const {handleChangeScroll} = useContext(WebContext);
     const propsMobile = useSpring({
         from: {x: -1000},
         to: {x: 0},
@@ -41,11 +40,13 @@ export const Header = ({scroll}: Props) => {
             </animated.div>
             <animated.ul style={{...propsWeb}}>
                 <LinkS 
-                    className={scroll >= 0 && scroll < 600 ? styles.actived : styles.li}
+                    className={styles.li}
+                    activeClass={styles.actived}
                     to="home"
                     smooth={true}
                     duration={500} 
-                    spy={true} 
+                    spy={true}
+                    onSetActive={() => handleChangeScroll("home")}
                     offset={-80} 
                     // onClick={() => handleScrollTo(0, 0)}
                 >Início</LinkS>
@@ -53,26 +54,32 @@ export const Header = ({scroll}: Props) => {
                     to="about"
                     smooth={true}
                     duration={500}
+                    activeClass={styles.actived}
                     spy={true}
-                    offset={300}
-                    className={scroll >= 600 && scroll < 1500 ? styles.actived : styles.li} 
+                    offset={-80}
+                    onSetActive={() => handleChangeScroll("about")}
+                    className={styles.li}
                     // onClick={() => handleScrollTo(400, 1500)}
                     >Sobre</LinkS>
                 <LinkS
                     to="portfolio"
-                    className={scroll >= 1500 && scroll < 2500 ? styles.actived : styles.li}
+                    className={styles.li}
+                    activeClass={styles.actived}
                     smooth={true}
                     duration={500}
                     spy={true}
                     offset={-80}
+                    onSetActive={() => handleChangeScroll("portfolio")}
                     >Portifólio</LinkS>
                 <LinkS
                     to="contact"
-                    className={scroll >= 2500 && scroll < 3000 ? styles.actived : styles.li}
+                    activeClass={styles.actived}
+                    className={styles.li}
                     smooth={true}
                     duration={500}
                     spy={true}
                     offset={-80}
+                    onSetActive={() => handleChangeScroll("contact")}
                     >Contato</LinkS>
             </animated.ul>
             <Drawer open={openMenuMobile} handleCancel={handleCancel} />

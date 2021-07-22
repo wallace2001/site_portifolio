@@ -6,10 +6,6 @@ import styles from './styles.module.scss';
 import { useContext } from 'react';
 import { WebContext } from '../../context/contact';
 
-interface Props{
-    open: boolean;
-}
-
 type Inputs = {
     name: string;
     email: string;
@@ -17,25 +13,27 @@ type Inputs = {
     description: string;
 };
 
-export const Contact = ({open}: Props) => {
+export const Contact = () => {
 
     const [submitting, setSubmitting] = useState<boolean>(false);
     const [error, setError] = useState<boolean>(false);
-    const {handleSendEmail, status} = useContext(WebContext);
+    const {handleSendEmail, handleChangeStatus, loading, scrollActive} = useContext(WebContext);
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = async(data) => {
-        const alreadySendEmail = await localStorage.getItem("send_email");
+        const alreadySendEmail = await sessionStorage.getItem("send_email");
+        handleChangeStatus(true);
 
         if(alreadySendEmail === "true"){
             setError(true);
+            handleChangeStatus(false);
             return;
         }
 
         if(submitting){
+            handleChangeStatus(false);
             return;
         }
-        
         setSubmitting(true);
         handleSendEmail({data});
         setSubmitting(false);
@@ -43,13 +41,13 @@ export const Contact = ({open}: Props) => {
     }
 
     const propsHeader = useSpring({
-        opacity: open ? 1 : 0,
-        x: open ? 0 : -500,
+        opacity: scrollActive.contact ? 1 : 0,
+        x: scrollActive.contact ? 0 : -500,
         delay: 100,
     });
     const propsContent = useSpring({
-        opacity: open ? 1 : 0,
-        x: open ? 0 : -500,
+        opacity: scrollActive.contact ? 1 : 0,
+        x: scrollActive.contact ? 0 : -500,
         delay: 300,
     });
 
@@ -79,11 +77,10 @@ export const Contact = ({open}: Props) => {
                         </label>
                         <label>
                             <p>Dúvida</p>
-                            <textarea {...register("description", {required: true})} placeholder="Digite sua dúvida" />
-                            {errors.description && <p style={{color: "#ff0000", fontSize: 16}}>Descrição obrigatória obrigatório</p>}
+                            <textarea {...register("description")} placeholder="Digite sua dúvida" />
                         </label>
-                        <button type="submit" className={!submitting ? styles.button : styles.buttonDisabled}>
-                            {submitting ? (<AiFillLock />) : "Enviar"}
+                        <button type="submit" className={!loading ? styles.button : styles.buttonDisabled}>
+                            {loading ? (<AiFillLock />) : "Enviar"}
                         </button>
                     </form>
                 </animated.div>
