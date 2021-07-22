@@ -98,10 +98,6 @@ export const Contact = () => {
                         <h4>Telefone</h4>
                         <p>(61)99178-6805</p>
                     </label>
-                    <label className={styles.label}>
-                        <h4>WhatsApp</h4>
-                        <button>WhatsApp</button>
-                    </label>
                 </animated.div>
             </div>
         </div>
