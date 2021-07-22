@@ -25,7 +25,7 @@ export const Drawer = ({open, handleCancel}: Props) => {
     return (
         <animated.div ref={ref} style={{...propsContainer, ...propsContainerDisplay}} className={styles.container}>
             <div><IoClose cursor="pointer" onClick={handleCancel} size={50} color="#fff" /></div>
-            <ul>
+            <ul className={styles.ul}>
             <LinkS 
                     className={styles.li}
                     to="home"
