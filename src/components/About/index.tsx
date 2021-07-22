@@ -50,7 +50,7 @@ export const About = () => {
                         Olá, me chamo Wallace de Paula Silva, tenho 19 anos e estou cursando ciência da computação na uniCEUB. Sou um desenvolvedor full stack faz um ano e meio e comecei a trabalhar profissionalmente esse ano como freelancer. Mais abaixo você vai encontrar alguns dos meus projetos.  
                     </animated.p>
                     <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontate. Como todo mundo sabe, muitas pessoas já pensaram em desistir ou mesmo desistiu da carreira de programador, eu jamais pensei nisso. Quando eu quero algo e gosto muito eu faço acontecer, não tem obstáculos que me derrube. Eu amo ser programador e quero alcançar muitos objetivos e sonhos.
+                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontate. Quando eu quero algo e gosto muito eu faço acontecer, não tem obstáculos que me derrube. Eu amo ser programador e quero alcançar muitos objetivos e sonhos.
                     </animated.p>
                     <animated.p style={{...propsDescrition}} className={styles.description}>
                         Obrigado!

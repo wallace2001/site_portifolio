@@ -22,7 +22,7 @@ export const Portfolio = () => {
 
     return (
         <div className={styles.container}>
-            <animated.h2 style={{...propsHeader}}>PORTIFÓLIO</animated.h2>
+            <animated.h2 style={{...propsHeader}}>PORTFÓLIO</animated.h2>
             <animated.div className={styles.line} style={{...propsHeader}} />
 
             <animated.div style={{...propsRest}} className={styles.product}>
