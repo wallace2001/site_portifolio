@@ -108,11 +108,18 @@ export default function Home() {
       <div className={styles.footer}>
         <h4>2021 - Todos os direitos autorais reservados</h4>
         <div>
-          <AiFillInstagram size={30} color="#000" />
-          <AiFillFacebook size={30} color="#000" />
-          <AiFillLinkedin size={30} color="#000" />
-          <AiFillGithub size={30} color="#000" />
-          <AiOutlineWhatsApp size={30} color="#000" />
+          <a href="https://www.instagram.com/wallace.2001/" target="_blank">
+            <AiFillInstagram size={30} color="#000" />
+          </a>
+          <a href="https://www.facebook.com/wallace.silva.10420/" target="_blank">
+            <AiFillFacebook size={30} color="#000" />
+          </a>
+          <a href="https://www.linkedin.com/in/wallace-silva-2a40b41b6/" target="_blank">
+            <AiFillLinkedin size={30} color="#000" />
+          </a>
+          <a href="https://github.com/wallace2001" target="_blank">
+            <AiFillGithub size={30} color="#000" />
+          </a>
         </div>
       </div>
       <ModalStatus />
