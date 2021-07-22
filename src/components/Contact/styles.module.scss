@@ -124,7 +124,7 @@
                 }
             }
 
-            button{
+            .button{
                 width: 10rem;
                 height: 3rem;
           
@@ -147,6 +147,24 @@
                   background-color: transparent;
                   border: 1px solid var(--blue);
                 }
+            }
+            .buttonDisabled{
+                width: 10rem;
+                height: 3rem;
+          
+                background-color: var(--blue);
+                border: none;
+                border-radius: 5px;
+          
+                margin-top: 2rem;
+          
+                font-size: 1.5rem;
+                font-family: "Ubuntu", sans-serif;
+                font-weight: bold;
+                color: var(--white);
+
+                filter: brightness(0.1);
+          
             }
         }
 

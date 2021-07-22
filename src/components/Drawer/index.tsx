@@ -28,7 +28,6 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     smooth={true}
                     duration={500} 
                     spy={true} 
-                    exact='true' 
                     offset={-80} 
                     onClick={handleCancel}
                 >Início</LinkS>
@@ -37,7 +36,6 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={300}
                     className={styles.li} 
                     onClick={handleCancel}
@@ -48,7 +46,6 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={-80}
                     onClick={handleCancel}
                     >Portifólio</LinkS>
@@ -58,7 +55,6 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={-80}
                     onClick={handleCancel}
                     >Contato</LinkS>

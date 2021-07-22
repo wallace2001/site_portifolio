@@ -1,0 +1,76 @@
+.container{
+    width: 100%;
+    height: 100vh;
+
+    .header{
+        width: 100%;
+        height: 15rem;
+
+        background-color: var(--blue);
+    }
+
+    .box{
+        width: 25rem;
+        height: 30rem;
+
+        @media screen and (max-width: 1000px){
+            width: 20rem;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        -webkit-box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.45);
+        -moz-box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.45);
+        box-shadow: -2px 3px 5px 0px rgba(0,0,0,0.45);
+
+        position: relative;
+        top: -150px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: 0;
+
+        border-radius: 5px;
+        background-color: #fafafa;
+
+        padding: 1rem 2rem;
+
+        h3{
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        p{
+            font-size: 1rem;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 400;
+        }
+
+        button{
+            width: 15rem;
+            height: 3rem;
+      
+            border: none;
+            border-radius: 5px;
+      
+            margin-top: 2rem;
+      
+            font-size: 1.1rem;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: bold;
+            color: var(--blue);
+            background-color: transparent;
+            border: 1px solid var(--blue);
+            cursor: pointer;
+      
+            transition: color 0.2s, background-color 0.2s, border 0.2s;
+      
+            &:hover{
+              color: var(--white);
+              background-color: var(--blue);
+            }
+        }
+    }
+}
