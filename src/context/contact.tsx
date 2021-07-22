@@ -30,6 +30,7 @@ interface PropsContext{
         contact: boolean;
         portfolio: boolean;    
     };
+    firstAccess: boolean;
     handleSendEmail: ({data}: PropsData ) => void;
     handleChangeStatus: (status: boolean) => void;
     handleChangeScroll: (active: string) => void;
@@ -93,16 +94,11 @@ export const WebProvider = ({children}) => {
             setScrollActive({...scrollActive, contact: true});
         }
     };
-
-    if(loading || firstAccess){
-        return(
-            <Loading />
-        );
-    }
     return(
         <WebContext.Provider value={{
             status,
             loading,
+            firstAccess,
             scrollActive,
             handleChangeScroll,
             handleSendEmail,

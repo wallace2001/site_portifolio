@@ -84,7 +84,7 @@ export const Contact = () => {
                         </button>
                     </form>
                 </animated.div>
-                <animated.div className={styles.separator}>
+                <animated.div style={{...propsContent}} className={styles.separator}>
                     <div></div>
                     <p>ou</p>
                     <div></div>

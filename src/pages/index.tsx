@@ -14,6 +14,7 @@ import { Contact } from '../components/Contact';
 import { ButtonFloat } from '../components/ButtonFloat';
 import { Link } from 'react-scroll';
 import { ModalStatus } from '../components/ModalStatus';
+import { Loading } from '../components/Loading';
 
 export default function Home() {
   const [scroll, setScroll] = useState<number>(0);
@@ -66,6 +67,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header />
+      <Loading />
       <div className={styles.video}>
         <animated.video style={{...propsVideo}} autoPlay loop muted src="bg.mp4"></animated.video>
       </div>

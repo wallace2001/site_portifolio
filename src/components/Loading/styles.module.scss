@@ -2,7 +2,8 @@
     width: 100%;
     height: 100vh;
 
-    position: fixed;
+    position: absolute;
+    z-index: 999;
     background-color: var(--black);
 
     display: flex;
@@ -23,4 +24,8 @@
             100% { transform: rotate(360deg); }
         }
     }
+}
+
+.displayNone{
+    display: none;
 }

@@ -47,8 +47,8 @@ export const portfolio = [
     },
     {
         id: "6",
-        title: "Hamburgueria",
-        name: "Site de demonstração de uma hamburgueria",
+        title: "Restaurante",
+        name: "Site de demonstração de um restaurante",
         description: "Este site também possui muito tempo que desenvolvi, ele tem a finalidade de ser como um cardápio e também possui um painel de controle para gerenciar praticamente tudo do site.",
         link: "https://fronted-delivery.vercel.app/",
         image: "/hamb.png",

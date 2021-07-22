@@ -14,14 +14,16 @@ export const Drawer = ({open, handleCancel}: Props) => {
     const ref = useRef();
     const {handleChangeScroll} = useContext(WebContext);
     const propsContainer = useSpring({
-        // width: !open && 0,
-        display: open ? 'flex' : 'none',
         x: open ? 0 : -1000,
-        delay: 100,
+        delay: 200,
+    });
+    const propsContainerDisplay = useSpring({
+        display: open ? 'flex' : 'none',
+        delay: 400,
     });
 
     return (
-        <animated.div ref={ref} style={{...propsContainer}} className={styles.container}>
+        <animated.div ref={ref} style={{...propsContainer, ...propsContainerDisplay}} className={styles.container}>
             <div><IoClose cursor="pointer" onClick={handleCancel} size={50} color="#fff" /></div>
             <ul>
             <LinkS 
