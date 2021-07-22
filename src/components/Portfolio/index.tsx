@@ -4,19 +4,19 @@ import { Products } from '../Products';
 import styles from './styles.module.scss';
 
 interface Props{
-    scroll: number;
+    open: boolean;
 }
 
-export const Portfolio = ({scroll}: Props) => {
+export const Portfolio = ({open}: Props) => {
 
     const propsHeader = useSpring({
-        opacity: scroll >= 1500 ? 1 : 0,
-        x: scroll >= 1500 ? 0 : -500,
+        opacity: open ? 1 : 0,
+        x: open ? 0 : -500,
         delay: 100
     });
     const propsRest = useSpring({
-        opacity: scroll >= 1500 ? 1 : 0,
-        x: scroll >= 1500 ? 0 : -500,
+        opacity: open ? 1 : 0,
+        x: open ? 0 : -500,
         delay: 200
     });
 

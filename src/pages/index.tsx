@@ -2,6 +2,7 @@ import { useSpring, animated } from 'react-spring';
 import { IoLogoNodejs, IoLogoJavascript } from 'react-icons/io';
 import { SiTypescript, SiRedux, SiNextDotJs } from 'react-icons/si';
 import { DiMongodb } from 'react-icons/di';
+import { AiFillInstagram, AiFillFacebook, AiFillLinkedin, AiFillGithub, AiOutlineWhatsApp } from 'react-icons/ai';
 import { FaReact } from 'react-icons/fa';
 import styles from '../../styles/Home.module.scss';
 import { Header } from '../components/Header';
@@ -9,9 +10,14 @@ import { About } from '../components/About';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Portfolio } from '../components/Portfolio';
+import { Contact } from '../components/Contact';
+import { ButtonFloat } from '../components/ButtonFloat';
+import { Link } from 'react-scroll';
 
 export default function Home() {
   const [showAboutSession, setShowAboutSession] = useState<boolean>(false);
+  const [showPortfolioSession, setShowPortfolioSession] = useState<boolean>(false);
+  const [showContactSession, setShowContactSession] = useState<boolean>(false);
   const [scroll, setScroll] = useState<number>(0);
 
   const propsVideo = useSpring({
@@ -58,6 +64,14 @@ export default function Home() {
       if(document.documentElement.scrollTop >= 400){
         setShowAboutSession(true);
       }
+
+      if(document.documentElement.scrollTop >= 1500){
+        setShowPortfolioSession(true);
+      }
+
+      if(document.documentElement.scrollTop >= 2600){
+        setShowContactSession(true);
+      }
     }; 
   }, []);
 
@@ -80,13 +94,37 @@ export default function Home() {
           <FaReact size={30} color="#fff" />
           <DiMongodb size={30} color="#fff" />
         </animated.div>
-        <animated.button style={{...propsRest}}>Portifólio</animated.button>
+        <animated.button style={{...propsRest}}>
+          <Link
+            to="portfolio"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-80}  
+          >
+            Portifólio
+          </Link>
+        </animated.button>
       </div>
       <div id="about" className={styles.about}>
         <About open={showAboutSession} />
       </div>
       <div className={styles.portfolio} id="portfolio">
-        <Portfolio scroll={scroll} />
+        <Portfolio open={showPortfolioSession} />
+      </div>
+      <div className={styles.contact} id="contact">
+        <Contact open={showContactSession} />
+      </div>
+      <ButtonFloat scroll={scroll} />
+      <div className={styles.footer}>
+        <h4>2021 - Todos os direitos autorais reservados</h4>
+        <div>
+          <AiFillInstagram size={30} color="#000" />
+          <AiFillFacebook size={30} color="#000" />
+          <AiFillLinkedin size={30} color="#000" />
+          <AiFillGithub size={30} color="#000" />
+          <AiOutlineWhatsApp size={30} color="#000" />
+        </div>
       </div>
     </div>
   )

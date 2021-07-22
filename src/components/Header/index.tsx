@@ -41,12 +41,11 @@ export const Header = ({scroll}: Props) => {
             </animated.div>
             <animated.ul style={{...propsWeb}}>
                 <LinkS 
-                    className={scroll >= 0 && scroll < 400 ? styles.actived : styles.li}
+                    className={scroll >= 0 && scroll < 600 ? styles.actived : styles.li}
                     to="home"
                     smooth={true}
                     duration={500} 
                     spy={true} 
-                    exact='true' 
                     offset={-80} 
                     // onClick={() => handleScrollTo(0, 0)}
                 >Início</LinkS>
@@ -55,7 +54,6 @@ export const Header = ({scroll}: Props) => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={300}
                     className={scroll >= 600 && scroll < 1500 ? styles.actived : styles.li} 
                     // onClick={() => handleScrollTo(400, 1500)}
@@ -66,16 +64,14 @@ export const Header = ({scroll}: Props) => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={-80}
                     >Portifólio</LinkS>
                 <LinkS
-                    to="#"
+                    to="contact"
                     className={scroll >= 2500 && scroll < 3000 ? styles.actived : styles.li}
                     smooth={true}
                     duration={500}
                     spy={true}
-                    exact='true'
                     offset={-80}
                     >Contato</LinkS>
             </animated.ul>

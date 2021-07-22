@@ -53,7 +53,7 @@ export const Drawer = ({open, handleCancel}: Props) => {
                     onClick={handleCancel}
                     >Portifólio</LinkS>
                 <LinkS
-                    to="#"
+                    to="contact"
                     className={styles.li}
                     smooth={true}
                     duration={500}
