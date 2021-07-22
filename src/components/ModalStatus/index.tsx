@@ -6,12 +6,10 @@ import styles from './styles.module.scss';
 
 export const ModalStatus = () => {
     const {status} = useContext(WebContext);
-
     const props = useSpring({
         opacity: status.response ? 1 : 0,
-        y: status.response ? 0 : -2000,
+        y: status.response ? 0 : -500,
         delay: 300,
-        loop: true,
     });
 
     return (
