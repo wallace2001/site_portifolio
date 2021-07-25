@@ -64,6 +64,7 @@ export const WebProvider = ({children}) => {
         setLoading(true);
         axios.post("/api/email", data).then(res => {
             setLoading(false);
+            console.log(res.data);
             if(!res.data.error){
                 setStatus({
                     success: true,
