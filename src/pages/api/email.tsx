@@ -22,7 +22,8 @@ export default async(req, res) => {
       `,
     }
   
-    sgMail.send(msg);
+    sgMail.send(msg).then(res => 
+      console.log(res)).catch(err => console.log(res));
 
     res.status(200).json("Mensagem enviada.");
   } catch (error) {
