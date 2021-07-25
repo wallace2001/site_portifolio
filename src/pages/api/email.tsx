@@ -12,8 +12,8 @@ export default async(req, res) => {
 
   try {
     const msg = {
-      to: 'kollen22@outlook.com', // Change to your recipient
-      from: 'sonhoveg@sonhoveg.com', // Change to your verified sender
+      to: process.env.NEXT_PUBLIC_EMAIL_RECEIVE, // Change to your recipient
+      from: process.env.NEXT_PUBLIC_EMAIL_SEND, // Change to your verified sender
       subject: `${name} enviou uma mensagem para você`,
       html: `
         <h3>E-mail: <h5>${email}</h5></h3>
