@@ -62,7 +62,10 @@ export const WebProvider = ({children}) => {
 
     const handleSendEmail = ({data}: PropsData) => {
         setLoading(true);
-        axios.post("/api/email", data).then(res => {
+        axios.post("/api/email", data).then(async(res) => {
+            const response = await sessionStorage.getItem('send_email');
+            const quantityEmails = JSON.parse(response);
+
             setLoading(false);
             console.log(res.data);
             if(!res.data.error){
@@ -71,7 +74,15 @@ export const WebProvider = ({children}) => {
                     error: {},
                     response: true,
                 });
-                sessionStorage.setItem("send_email", "true");
+                if (!quantityEmails){
+                    const quantityEmails = {
+                        quantity: 1,
+                    }
+                    setLoading(false);
+                    return sessionStorage.setItem("send_email", JSON.stringify(quantityEmails));
+                }
+                quantityEmails.quantity = Number(quantityEmails.quantity) + 1;
+                sessionStorage.setItem("send_email", JSON.stringify(quantityEmails));
                 setLoading(false);
             } else {
                 setStatus({

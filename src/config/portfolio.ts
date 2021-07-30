@@ -10,6 +10,15 @@ export const portfolio = [
         reverse: false,
     },
     {
+        id: "8",
+        title: "Ecommerce App",
+        name: "Aplicativo de ecommerce",
+        link: "https://github.com/wallace2001/app_ecommerce_project",
+        description: "Um aplicativo simples simulando um ecommerce, com muitas funcionalidades como, animações, rotas autenticadas, tab bar, sistema de carrinho, swipeable...",
+        image: "/app.jpeg",
+        reverse: true,
+    },
+    {
         id: "2",
         title: "Site Portfólio",
         name: "Site Portfólio",
@@ -62,15 +71,5 @@ export const portfolio = [
         description: "Este aplicativo foi desenvolvido para ser usado apenas por uma pessoa. Ele possui um sistema de chat em tempo real para conversarem com pessoas que entram em contato pelo site dele.",
         image: "/app.svg",
         reverse: false,
-    },
-    
-    {
-        id: "8",
-        title: "Ecommerce App",
-        name: "Aplicativo de ecommerce",
-        link: "https://github.com/wallace2001/app_ecommerce_project",
-        description: "Um aplicativo simples simulando um ecommerce, com muitas funcionalidades como, animações, rotas autenticadas, tab bar, sistema de carrinho, swipeable...",
-        image: "/app.jpeg",
-        reverse: true,
     },
 ];
