@@ -63,6 +63,7 @@ export const portfolio = [
         image: "/app.svg",
         reverse: false,
     },
+    
     {
         id: "8",
         title: "Ecommerce App",
