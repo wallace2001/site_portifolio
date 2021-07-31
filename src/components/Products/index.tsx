@@ -24,7 +24,7 @@ export const Products = ({item}: Props) => {
                     <label>
                         <h4>{item.name}</h4>
                         <p>{item.description}</p>
-                        <a target="_blank" href={item.link}>{item.link}</a>
+                        <a target="_blank" href={item.link}>{item.link === "#" ? "#" : "Ver o site"}</a>
                     </label>
                 </div>
             </div>
