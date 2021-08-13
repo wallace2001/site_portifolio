@@ -7,7 +7,7 @@ export const portfolio = [
         description: "Este é um site de vendas de doces, onde há pagamentos, contas, painel de controle para administrar praticamente tudo que acontece no site, status das comidas e agendamento para entrega e muito mais. Este é um dos sites mais completos que já fiz, ainda não está totalmente completo, mas as principais funcionalidades está tudo funcionando muito bem.",
         link: "https://sonhoveg.com/",
         image: "/sonhoveg.svg",
-        reverse: false,
+        reverse: true,
     },
     {
         id: "8",
@@ -16,7 +16,7 @@ export const portfolio = [
         link: "https://github.com/wallace2001/app_ecommerce_project",
         description: "Um aplicativo simples simulando um ecommerce, com muitas funcionalidades como, animações, rotas autenticadas, tab bar, sistema de carrinho, swipeable...",
         image: "/app.jpeg",
-        reverse: true,
+        reverse: false,
     },
     {
         id: "2",
