@@ -15,6 +15,7 @@ import { ButtonFloat } from '../components/ButtonFloat';
 import { Link } from 'react-scroll';
 import { ModalStatus } from '../components/ModalStatus';
 import { Loading } from '../components/Loading';
+import { GetStaticProps } from 'next';
 
 export default function Home() {
   const [scroll, setScroll] = useState<number>(0);
@@ -126,3 +127,11 @@ export default function Home() {
     </div>
   )
 }
+
+export const getStaticProps: GetStaticProps = async() => {
+
+  return {
+    props: {},
+    revalidate: 60 * 60 * 100,
+  };
+};
