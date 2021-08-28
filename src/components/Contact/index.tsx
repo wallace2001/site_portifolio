@@ -22,9 +22,10 @@ export const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = async(data) => {
         const alreadySendEmail = await sessionStorage.getItem("send_email");
+        const quantityEmails = JSON.parse(alreadySendEmail);
         handleChangeStatus(true);
 
-        if(alreadySendEmail === "true"){
+        if(quantityEmails.quantity >= 3){
             setError(true);
             handleChangeStatus(false);
             return;
@@ -59,7 +60,7 @@ export const Contact = () => {
             <div className={styles.wrapper}>
                 <animated.div style={{...propsContent}} className={styles.wrap}>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        {error && <p style={{color: "#ff0000", fontSize: 16}}>Desculpe, você já enviou um email.</p>}
+                        {error && <p style={{color: "#ff0000", fontSize: 16}}>Desculpe, você já enviou 3 emails.</p>}
                         <label>
                             <p>Nome</p>
                             <input {...register("name", {required: true})} type="text" placeholder="Digite seu nome" />
