@@ -47,7 +47,6 @@ export const Header = () => {
                     duration={500} 
                     spy={true}
                     onSetActive={() => handleChangeScroll("home")}
-                    offset={-80} 
                     // onClick={() => handleScrollTo(0, 0)}
                 >Início</LinkS>
                 <LinkS
@@ -56,7 +55,6 @@ export const Header = () => {
                     duration={500}
                     activeClass={styles.actived}
                     spy={true}
-                    offset={-80}
                     onSetActive={() => handleChangeScroll("about")}
                     className={styles.li}
                     // onClick={() => handleScrollTo(400, 1500)}
@@ -68,7 +66,6 @@ export const Header = () => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    offset={-80}
                     onSetActive={() => handleChangeScroll("portfolio")}
                     >Portifólio</LinkS>
                 <LinkS
@@ -78,7 +75,6 @@ export const Header = () => {
                     smooth={true}
                     duration={500}
                     spy={true}
-                    offset={-80}
                     onSetActive={() => handleChangeScroll("contact")}
                     >Contato</LinkS>
             </animated.ul>

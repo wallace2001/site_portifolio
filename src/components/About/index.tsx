@@ -1,9 +1,9 @@
 import React from 'react';
 import { useContext } from 'react';
 import { DiMongodb } from 'react-icons/di';
-import { FaReact } from 'react-icons/fa';
+import { FaJava, FaReact } from 'react-icons/fa';
 import { IoLogoJavascript, IoLogoNodejs } from 'react-icons/io';
-import { SiNextDotJs, SiRedux, SiTypescript } from 'react-icons/si';
+import { SiNextDotJs, SiRedux, SiSpring, SiTypescript } from 'react-icons/si';
 import { useSpring, animated } from 'react-spring';
 import { WebContext } from '../../context/contact';
 import styles from './styles.module.scss';
@@ -47,13 +47,10 @@ export const About = () => {
                     <animated.h1 style={{...propsHeader}}>Olá, meu nome é Wallace De Paula Silva</animated.h1>
                     <animated.div style={{...propsHeader}} className={styles.line} />
                     <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Olá, me chamo Wallace de Paula Silva, tenho 19 anos e estou cursando ciência da computação na uniCEUB. Sou um desenvolvedor full stack faz um ano e meio e comecei a trabalhar profissionalmente esse ano como freelancer. Mais abaixo você vai encontrar alguns dos meus projetos.  
+                        Olá, me chamo Wallace de Paula Silva e tenho 20 anos. Atualmente trabalho como Backend, com a stack Java e Spring Boot e tenho experiência com FrontEnd também.   
                     </animated.p>
                     <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontate. Quando eu quero algo e gosto muito eu faço acontecer, não tem obstáculos que me derrube. Eu amo ser programador e quero alcançar muitos objetivos e sonhos.
-                    </animated.p>
-                    <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Obrigado!
+                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontate. Sempre dou o meu melhor e sou bastante persistente, quando vejo que algo não está perfeito ou que não está da maneira que tinha comno estar, não fico confortável.
                     </animated.p>
                     <animated.h3 style={{...propsStack}}>Minha stack</animated.h3>
                     <animated.div style={{...propsStack}} className={styles.line_1} />
@@ -78,6 +75,12 @@ export const About = () => {
                         </label>
                         <label>
                             <DiMongodb size={30} color="#fff" />
+                        </label>
+                        <label>
+                            <FaJava size={30} color="#fff" />
+                        </label>
+                        <label>
+                            <SiSpring size={30} color="#fff" />
                         </label>
                     </animated.div>
                 </div>

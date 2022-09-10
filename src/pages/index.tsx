@@ -1,9 +1,9 @@
 import { useSpring, animated } from 'react-spring';
 import { IoLogoNodejs, IoLogoJavascript } from 'react-icons/io';
-import { SiTypescript, SiRedux, SiNextDotJs } from 'react-icons/si';
+import { SiTypescript, SiRedux, SiNextDotJs, SiSpring } from 'react-icons/si';
 import { DiMongodb } from 'react-icons/di';
 import { AiFillInstagram, AiFillFacebook, AiFillLinkedin, AiFillGithub, AiOutlineWhatsApp } from 'react-icons/ai';
-import { FaReact } from 'react-icons/fa';
+import { FaJava, FaReact } from 'react-icons/fa';
 import styles from '../../styles/Home.module.scss';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
@@ -70,7 +70,7 @@ export default function Home() {
       <Header />
       <Loading />
       <div className={styles.video}>
-        <animated.video style={{...propsVideo}} autoPlay loop muted src="bg.mp4"></animated.video>
+        <animated.video style={{...propsVideo}} autoPlay loop muted src="/bg.mp4"></animated.video>
       </div>
       <div id="home" className={styles.apresentation}>
         <animated.h2 style={{...propsTitle}}>Bem vindo</animated.h2>
@@ -83,6 +83,8 @@ export default function Home() {
           <SiNextDotJs size={30} color="#fff" />
           <FaReact size={30} color="#fff" />
           <DiMongodb size={30} color="#fff" />
+          <FaJava size={30} color="#fff" />
+          <SiSpring size={30} color="#fff" />
         </animated.div>
         <animated.button style={{...propsRest}}>
           <Link
