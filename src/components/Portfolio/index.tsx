@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { portfolio } from '../../config/portfolio';
 import { WebContext } from '../../context/contact';
-import { Products } from '../Products';
+import { Product } from '../Product';
 import styles from './styles.module.scss';
 
 export const Portfolio = () => {
@@ -28,7 +28,7 @@ export const Portfolio = () => {
             <animated.div style={{...propsRest}} className={styles.product}>
                 {portfolio.map((item, index) => {
                     return(
-                        <Products
+                        <Product
                             key={index}
                             item={item}
                         />

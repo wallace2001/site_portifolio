@@ -109,7 +109,7 @@ export default function Home() {
       </div>
       <ButtonFloat scroll={scroll} />
       <div className={styles.footer}>
-        <h4>2021 - Todos os direitos autorais reservados</h4>
+        <h4>2023 - Todos os direitos autorais reservados</h4>
         <div>
           <a href="https://www.instagram.com/wallace.2001/" target="_blank">
             <AiFillInstagram size={30} color="#000" />

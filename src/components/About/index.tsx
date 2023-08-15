@@ -39,7 +39,7 @@ export const About = () => {
     return (
         <div className={styles.container}>
             <animated.div style={{...propsPhoto}} className={styles.photo}>
-                <img src="https://avatars.githubusercontent.com/u/70642744?v=4" alt="wallace" />
+                <img src="https://media.licdn.com/dms/image/D4D03AQH9SGo-p0M6RA/profile-displayphoto-shrink_800_800/0/1691953325686?e=1697673600&v=beta&t=AH8XlWuQeTolQfkBojTyQgilRCDMj5EBizNgWx7vFgA" alt="wallace" />
             </animated.div>
             <div className={styles.boxAbout}>
                 <div>
@@ -47,10 +47,10 @@ export const About = () => {
                     <animated.h1 style={{...propsHeader}}>Olá, meu nome é Wallace De Paula Silva</animated.h1>
                     <animated.div style={{...propsHeader}} className={styles.line} />
                     <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Olá, me chamo Wallace de Paula Silva e tenho 20 anos. Atualmente trabalho como Backend, com a stack Java e Spring Boot e tenho experiência com FrontEnd também.   
+                        Olá, me chamo Wallace de Paula Silva e tenho 21 anos. Atualmente sou FullStack, com a stack ReactJS e Spring Boot.   
                     </animated.p>
                     <animated.p style={{...propsDescrition}} className={styles.description}>
-                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontate. Sempre dou o meu melhor e sou bastante persistente, quando vejo que algo não está perfeito ou que não está da maneira que tinha comno estar, não fico confortável.
+                        Eu sou uma pessoa muito esforçada, dedicada e com muita força de vontade. Sempre dou o meu melhor e sou bastante persistente, quando vejo que algo não está perfeito ou que não está da maneira que tinha comno estar, não fico confortável.
                     </animated.p>
                     <animated.h3 style={{...propsStack}}>Minha stack</animated.h3>
                     <animated.div style={{...propsStack}} className={styles.line_1} />

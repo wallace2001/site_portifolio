@@ -1,0 +1,144 @@
+.container{
+    width: 100%;
+    height: auto;
+
+    .boxProductReverse{
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: column;
+
+        @media screen and (max-width: 1000px){
+            justify-content: center;
+            align-items: center;
+        };
+
+        h2{
+            font-size: 1.7rem;
+            text-align: start;
+        }
+
+        a{
+            font-size: 0.8rem;
+        }
+    
+        .line{
+            width: 20rem;
+            height: 2px;
+    
+            background-color: var(--blue);
+        }
+    
+        .box{
+            width: 100%;
+            height: auto;
+    
+            padding: 3rem 0;
+    
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+
+            @media screen and (max-width: 1000px){
+                flex-direction: column;
+                align-items: center;
+            };
+    
+            img{
+                max-width: 30rem;
+                max-height: 25rem;
+    
+                object-fit: contain;
+                background-size: 100% 100%;
+                border: 1px solid var(--blue);
+            }
+    
+            label{
+                width: 100%;
+                height: auto;
+    
+                margin-left: 2rem;
+    
+                h4{
+                    font-size: 1.3rem;
+                    font-family: "Ubuntu", sans-serif;
+                }
+    
+                p{
+                    font-family: "Ubuntu", sans-serif;
+                }
+            }
+        }
+    }
+    .boxProduct{
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+
+        @media screen and (max-width: 1000px){
+            justify-content: center;
+            align-items: center;
+        };
+
+        h2{
+            font-size: 1.7rem;
+            text-align: start;
+        }
+    
+        .line{
+            width: 20rem;
+            height: 2px;
+    
+            background-color: var(--blue);
+        }
+    
+        .box{
+            width: 100%;
+            height: auto;
+    
+            padding: 3rem 0;
+    
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            @media screen and (max-width: 1000px){
+                flex-direction: column;
+                align-items: center;
+            };
+    
+            img{
+                max-width: 30rem;
+                max-height: 25rem;
+    
+                object-fit: cover;
+                background-size: 100% 100%;
+                border: 1px solid var(--blue);
+            }
+    
+            label{
+                width: 100%;
+                height: auto;
+    
+                margin-left: 2rem;
+    
+                h4{
+                    font-size: 1.3rem;
+                    font-family: "Ubuntu", sans-serif;
+                }
+    
+                p{
+                    font-family: "Ubuntu", sans-serif;
+                }
+            }
+        }
+    }
+}
